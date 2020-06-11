@@ -1,7 +1,7 @@
 # Valerie Kaziuchyts
 *The main goal is constant improvement and upgrading.*
 ___
-##### __EDUCATION__
+### __EDUCATION__
 __2017 - Present:__ *Belarusian State Economic University*
 
 3-year student
@@ -13,11 +13,11 @@ Qualification: economist/IT specialist
 __2015-2017:__ *Lyceum №2*
 
 Philology Department
-##### __INTERESTS__
+### __INTERESTS__
 * Sports & active lifestyle
 * Travelling
 * Social media
-##### __CONTACTS__
+### __CONTACTS__
 :email: kaziuchytsvalerie@gmail.com
 
 :telephone_receiver: +375 44 728-44-40
