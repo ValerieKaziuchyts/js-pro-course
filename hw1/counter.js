@@ -1,32 +1,16 @@
 function createCounter(initialValue) {
-    const userVariable = {
-        userNumber: initialValue,
-        changeNumber: initialValue,
-    };
-
-    let {userNumber = 0, changeNumber = 0} = userVariable;
+   let userNumber = initialValue || 0;
+   let changeNumber = initialValue || 0;
 
     return {
       increment(value) {
-        const incrementVariable = {
-            incrementNumber: value,
-        };
-
-        let {incrementNumber = 1} = incrementVariable;
-        changeNumber += incrementNumber;
-        
-        return {changeNumber, ...this};
+        changeNumber += value || 1;
+        return this;
       },
 
       decrement(value) {
-        const decrementVariable = {
-            decrementNumber: value,
-        };
-
-        let {decrementNumber = 1} = decrementVariable;
-        changeNumber -= decrementNumber;
-
-        return {changeNumber, ...this};
+        changeNumber -= value || 1;
+        return this;
       },
 
       showValue() {
@@ -35,8 +19,7 @@ function createCounter(initialValue) {
 
       discard() {
         changeNumber = userNumber;
-
-        return {changeNumber, ...this};
+        return this;
       },
     };
 }

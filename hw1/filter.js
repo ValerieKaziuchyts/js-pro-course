@@ -1,11 +1,4 @@
 function filter(...params) {
-    const arr = params;
-    const modifiedArr = [];
-
-    arr.filter((item, index) => {
-        if (arr.indexOf(item) === index) {
-            modifiedArr.push(item);
-        };
-    });
+    const modifiedArr = params.filter((item, index) => params.indexOf(item) === index);
     return modifiedArr;
 }
