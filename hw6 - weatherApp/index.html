@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="CSS/fonts.css" rel="stylesheet" type="text/css">
+    <title> Weather </title>
+</head>
+<body>
+    <header>
+        <button id="localWeather" class="headerBtn">Local</button>
+        <button id="history" class="headerBtn">History</button>
+    </header>
+    <form id="cityCountryInputs">
+        <input id="city" type="text" placeholder="Enter the city...">
+        <input id="country" type="text" placeholder="Enter the country...">
+        <button id="submitFormBtn" type="submit"> Submit </button>
+    </form>
+    
+    <div id="error">Please, check the names of the city or the country :)</div>
+
+    <div id="temperatureLocationBlock" class="temperatureLocationBlock">
+        <div class="temperatureVerticalBlock">
+            <div id="temperatureNumber" class="temperatureNumber">
+                25 </div><div class="degreeSign">°</div>
+            <div class="phrase">
+                feels like
+            </div>
+        </div>
+        <div class="locationDateVerticalBlock">
+           <img src="img/el_map-marker.png">
+            <div id="location" class="location">
+                Minsk, Belarus
+            </div>
+            <div id="date" class="date">
+                Monday, Nov 9
+            </div>
+        </div>
+    </div>
+
+    <div class="weatherInfoBlock">
+       <div id="welcomePhrase" class="welcomePhrase">Good morning!</div>
+
+        <div id="weatherDescriptionBlock" class="weatherDescriptionBlock">
+            <img id="weather" class="weather" src="img/icons8-%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%BE%D0%B1%D0%BB%D0%B0%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C-100.png">
+            <img id="backgroundCircle" class="backgroundCircle" src="img/Ellipse%202.png">
+            <div id="weatherDescription" class="weatherDescription">Partly cloudy</div>
+        </div>
+        <div id="weatherInfo" class="weatherInfo">
+            <div class="verticalInfoBlock">
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/uil_temperature.png">
+                        <div class="name">Temperature</div>
+                    </div>
+                    <div id="temperature" class="parameter"></div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/bi_droplet-half.png">
+                        <div class="name">Humidity</div>
+                    </div>
+                    <div id="humidity" class="parameter"></div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/bi_arrows-angle-contract.png">
+                        <div class="name">Pressure</div>
+                    </div>
+                    <div id="pressure" class="parameter"></div>
+                </div>
+            </div>
+            <div class="verticalInfoBlock">
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/uil_clouds.png">
+                        <div class="name">Cloud cover</div>
+                    </div>
+                    <div id="cloudCover" class="parameter"></div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/clarity_sun-line.png">
+                        <div class="name">UV Index</div>
+                    </div>
+                    <div class="unitHorizontal">
+                        <div id="uvIndex" class="parameter"> </div><div class="name"> of </div><div class="parameter"> 10</div>
+                    </div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/ei_eye.png">
+                        <div class="name">Visibility</div>
+                    </div>
+                    <div class="unitHorizontal">
+                        <div id="visibility" class="parameter"></div><div class="name"> km</div>
+                    </div>
+                </div>
+            </div>
+            <div class="verticalInfoBlock">
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/carbon_windy-strong.png">
+                        <div class="name">Wind speed</div>
+                    </div>
+                    <div class="unitHorizontal">
+                        <div id="windSpeed" class="parameter"> </div><div class="name">km/h</div>
+                    </div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/icomoon-free_compass.png">
+                        <div class="name">Wind direction</div>
+                    </div>
+                    <div id="windDirection" class="name"></div>
+                </div>
+                <div class="infoBlock">
+                    <div class="iconNameBlock">
+                        <img src="img/la_compass.png">
+                        <div class="name">Wind degree</div>
+                    </div>
+                    <div id="windDegree" class="parameter"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="historyRequestsBlock" class="historyRequestsBlock">
+        <button id="closeHistoryBlock" class="closeHistoryBlock"></button>
+        <div class="iconsHistory">
+            <img src="img/uil_temperature.png">
+            <img src="img/bi_droplet-half.png">
+            <img src="img/bi_arrows-angle-contract.png">
+            <img src="img/uil_clouds.png">
+            <img src="img/clarity_sun-line.png">
+            <img src="img/ei_eye.png">
+            <img src="img/carbon_windy-strong.png">
+            <img src="img/icomoon-free_compass.png">
+            <img src="img/la_compass.png">
+        </div>
+        <div id="scrollHistoryBlock" class="scroll">
+        </div>
+        <button id="cleanAll" class="cleanAll">Clean All</button>
+    </div>
+
+    <img id="orangeMountains" class="orangeMountains" src="img/Group%208.png">
+    <img id="pinkMountains" class="pinkMountains" src="img/Group%209.png">
+    <img id="blueMountains" class="blueMountains" src="img/Group%2010.png">
+    <img id="violetMountains" class="violetMountains" src="img/Group%2011.png">
+    <img id="sun" class="sun" src="img/Ellipse%201.png">
+    <img id="cloud1" class="cloud1" src="img/Vector%2021.png">
+    <img id="cloud2" class="cloud2" src="img/Vector%2022.png">
+    <img id="cloud3" class="cloud3" src="img/Vector%2023.png">
+    <img id="cloud4" class="cloud4" src="img/Vector%2024.png">
+    <img id="cloud5" class="cloud5" src="img/Vector%2025.png">
+    <img class="tree1" src="img/Vector%201.png">
+    <img class="tree2" src="img/Vector%202.png">
+    <img class="tree3" src="img/Vector%203.png">
+    <img class="tree4" src="img/Vector%204.png">
+    <img class="tree5" src="img/Vector%205.png">
+    <img id="shootingStar" class="shootingStar" src="img/Group%2013.png">
+    <img id="stars" class="stars" src="img/Stars.png">
+
+    <script src="JS/themeChange.js" type="module"></script>
+    <script src="JS/index.js" type="module"></script>
+</body>
+</html>
