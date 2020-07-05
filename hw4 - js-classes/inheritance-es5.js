@@ -11,7 +11,7 @@ function Car(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumpt
 const newCar = new Car ('Lamborghini', 'Aventador Roadster', 2015, 'Yellow & Black', 350);
 
 Car.prototype.getFullName = function() {
-    return this.name + ' ' + this.model;
+    return `${this.name} ${this.model}`;
 }
 
 Car.prototype.getAge = function() {
@@ -47,9 +47,9 @@ Car.prototype.calculateWay = function(kilometers, fuel) {
     }
 }
 
-function BMW(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, sunroof = true) {
-    Car.call(this, name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
-    this.sunroof = sunroof;
+function BMW(...params) {
+    Car.apply(this, params);
+    this.sunroof = params[7] === undefined || params[7];
 }
 
 BMW.prototype = Object.create(Car.prototype);
@@ -66,9 +66,9 @@ BMW.prototype.changeModel = function(newModelName) {
     }
 }
 
-function Lexus(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10,climateControl = true) {
-    Car.call(this, name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
-    this.climateControl = climateControl;
+function Lexus(...params) {
+    Car.apply(this, params);
+    this.climateControl = params[7] === undefined || params[7];
 }
 
 Lexus.prototype = Object.create(Car.prototype);
@@ -85,10 +85,10 @@ Lexus.prototype.changeYear = function(year) {
     }
 }
 
-function Ferrari(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10, sideSlipControl = true, password) {
-    Car.call(this, name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption);
-    this.sideSlipControl = sideSlipControl;
-    this.ownerPassword = password;
+function Ferrari(...params) {
+    Car.apply(this, params);
+    this.sideSlipControl = params[7] === undefined || params[7];
+    this.ownerPassword = params[8];
 }
 
 Ferrari.prototype = Object.create(Car.prototype);
