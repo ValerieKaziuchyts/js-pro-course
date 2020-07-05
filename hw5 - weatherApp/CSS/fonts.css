@@ -1,0 +1,29 @@
+@font-face {
+    font-family: K2D-Bold;
+    src: url("../fonts/K2D-Bold.ttf");
+}
+
+@font-face {
+    font-family: K2D-ExtraBold;
+    src: url("../fonts/K2D-Bold.ttf");
+}
+
+@font-face {
+    font-family: K2D-Medium;
+    src: url("../fonts/K2D-Medium.ttf");
+}
+
+@font-face {
+    font-family: K2D-Regular;
+    src: url("../fonts/K2D-Regular.ttf");
+}
+
+@font-face {
+    font-family: K2D-SemiBold;
+    src: url("../fonts/K2D-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Kanalisirung;
+    src: url("../fonts/Kanalisirung.otf");
+}
