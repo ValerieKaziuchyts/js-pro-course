@@ -1,0 +1,88 @@
+.notificationBlock {
+    display: none;
+    width: 26vw;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.274);
+}
+.textAndCloseBlock {
+    padding: 1.5vw;
+    display: flex;
+    position: relative;
+}
+.closeBtn {
+    margin-left: .5vw;
+    position: absolute;
+    top: 0.8vw;
+    right: 0.7vw;
+    height: 2vw;
+    font-family: 'Nunito-SemiBold';
+    font-size: 1.6vw;
+    background: transparent;
+    border: none;
+    color: rgb(27, 27, 27);
+    outline: none;
+    cursor: pointer;
+}
+.textOnly {
+    margin-right: 1vw;
+}
+.textName {
+    margin-bottom: 1vw;
+    font-family: 'Roboto-Bold';
+    text-transform: uppercase;
+    font-size: 1vw;
+}
+.notificationText, .checkboxDescription {
+    font-family: 'Roboto-Regular';
+    font-size: 1vw;
+}
+.optionsBlock {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8vw 1vw;
+    background-color: #f4f8fb;
+    height: 2.1vw;
+}
+.checkboxBlock {
+    margin-right: 2vw;
+    display: flex;
+    align-items: center;
+}
+.checkbox {
+    margin-right: .5vw;
+    width: 1.2vw;
+    outline: none;
+}
+.leftArrow, .rightArrow {
+    width: 1.8vw;
+}
+.previous, .next {
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+}
+.circle1, .circle2, .circle3, .circle4, .circle5, .circle6 {
+    border-radius: 100px;
+    padding: .25vw;
+    border: none;
+    background-color: #cbcfd0; /*   #1092fb   */
+    outline: none;
+    cursor: pointer;
+}
+.circle1, .circle2, .circle3, .circle4, .circle5 {
+    margin-right: .4vw;
+}
+.circle1:hover, .circle2:hover, .circle3:hover, .circle4:hover, .circle5:hover, .circle6:hover {
+    background-color: #8c8e8f;
+}
+.circlesBlock {
+    margin: 0 .8vw;
+    display: flex;
+    align-items: center;
+    width: 5vw;
+}

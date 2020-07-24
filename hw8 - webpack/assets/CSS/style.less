@@ -1,0 +1,643 @@
+@import url('fonts.css');
+
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #262626;
+}
+
+header {
+    padding-left: 3vw;
+    display: flex;
+    position: absolute;
+    top: -4.7vw;
+    width: 100%;
+    height: 3.4vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 15;
+}
+
+.headerBtn {
+    margin: 1vw;
+    outline: none;
+    border: 0;
+    background: transparent;
+    font-family: 'K2D-Medium';
+    font-size: 1.4vw;
+    color: white;
+    cursor: pointer;
+}
+
+#cityCountryInputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.5vw;
+    position: relative;
+    z-index: 100;
+}
+
+#city, #country {
+    margin-right: 2vw;
+    padding: .2vw .5vw .2vw 1vw;
+    width: 13vw;
+    height: 1.5vw;
+    font-family: 'K2D-Medium';
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+#submitFormBtn {
+    padding: 0vw 1.2vw;
+    font-family: 'K2D-Medium';
+    font-size: 1.2vw;
+    height: 1.8vw;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #ffce01, #d8a702);
+    outline: none;
+    transition: 1s;
+}
+
+#submitFormBtn:hover {
+    box-shadow: 0 0 20px #e3d637;
+    transition: .5s;
+}
+
+.temperatureLocationBlock {
+    margin-top: 7vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s opacity, 1s visibility;
+}
+
+#error {
+    display: none;
+    margin-top: .5vw;
+    font-family: 'K2D-Regular';
+    font-size: 1vw;
+    text-align: center;
+    color: #ffffff;
+}
+
+.temperatureVerticalBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .temperatureNumber {
+        margin-left: .3vw;
+        display: flex;
+        flex-direction: row;
+        font-family: 'Kanalisirung';
+        position: relative;
+        font-size: 5vw;
+        color: white;
+    }
+
+    .phrase {
+        font-family: 'K2D-Regular';
+        font-size: 1.3vw;
+        color: white;
+    }
+}
+
+.degreeSign {
+    position: absolute;
+    font-family: 'Kanalisirung';
+    font-size: 2.8vw;
+    color: white;
+    left: 5.3vw;
+    top: .2vw;
+    margin-top: .2vw;
+    font-size: 3vw;
+}
+
+.locationDateVerticalBlock {
+    margin-left: 3vw;
+    margin-top: 1.2vw;
+    text-align: center;
+
+    .location {
+        font-family: 'Kanalisirung';
+        text-transform: uppercase;
+        font-size: 1.8vw;
+        color: white;
+    }
+
+    img {
+        width: 1.8vw;
+    }
+
+    .date {
+        font-family: 'K2D-Regular';
+        font-size: 1.3vw;
+        color: white;
+    }
+}
+
+.weatherInfoBlock {
+    margin-top: 12.5vw;
+    padding: 9vw 13vw 3vw 13vw;
+    box-sizing: border-box;
+    position: relative;
+    height: 22.2vw;
+    background: url(../img/Group%207.png);
+    background-size:cover;
+    z-index: 5;
+
+    .weatherDescriptionBlock {
+        display: flex;
+        position: absolute;
+        top: -2vw;
+        left: 63vw;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: 1s opacity, 1s visibility;
+
+        .backgroundCircle {
+            width: 7vw;
+            height: 6.5vw;
+
+        }
+
+        .weather {
+            position: absolute;
+            top: 1.1vw;
+            left: 1.8vw;
+            width: 3.3vw;
+            height: 3.3vw;
+        }
+
+        .weatherDescription {
+            margin-top: 4vw;
+            width: 13vw;
+            font-family: 'K2D-Regular';
+            font-size: 1.4vw;
+            color: #7D7D7D;
+        }
+    }
+}
+
+.welcomePhrase {
+    position: absolute;
+    font-family: 'K2D-Medium';
+    font-size: 3.5vw;
+    left: 38vw;
+    bottom: 6vw;
+
+    animation: moveUp 1s linear;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveUp {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    to {
+        bottom: 6vw;
+        opacity: 1;
+    }
+}
+
+.weatherInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s opacity, 1s visibility;
+
+    .verticalInfoBlock:last-child {
+        margin: 0;
+    }
+
+    .verticalInfoBlock {
+        margin-right: 3vw;
+        display: flex;
+        flex-direction: column;
+        width: 21vw;
+
+        .infoBlock {
+            margin-bottom: 2vw;
+            padding: 0vw .5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 2vw;
+            border-bottom: 1px solid #B1B1B1;
+
+            .iconNameBlock {
+                display: flex;
+
+                img {
+                    margin-right: .5vw;
+                    object-fit: scale-down;
+                    width: 2vw;
+                    height: 2vw;
+                }
+            }
+        }
+    }
+}
+
+.name {
+    font-family: 'K2D-Regular';
+    font-size: 1.3vw;
+}
+
+.parameter {
+    font-family: 'Kanalisirung';
+    font-size: 1.3vw;
+    white-space: pre;
+    line-height: 1.6vw;
+}
+
+.orangeMountains {
+    position: absolute;
+    top: 7.5vw;
+    z-index: 3;
+    width: 49vw;
+
+    animation: moveOrangeMountains 1.5s linear;
+}
+
+@keyframes moveOrangeMountains {
+    from {
+        left: -5vw;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.pinkMountains {
+    position: absolute;
+    right: 0;
+    top: 12vw;
+    z-index: 3;
+    width: 43vw;
+
+    animation: movePinkMountains 1.5s linear;
+}
+
+@keyframes movePinkMountains {
+    from {
+        right: -5vw;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.blueMountains {
+    position: absolute;
+    top: 7.5vw;
+    z-index: 3;
+    width: 49vw;
+
+    animation: moveOrangeMountains 1.5s linear;
+}
+
+.violetMountains {
+    position: absolute;
+    right: 0;
+    top: 12vw;
+    z-index: 3;
+    width: 43vw;
+
+    animation: movePinkMountains 1.5s linear;
+}
+
+.sun {
+    position: absolute;
+    top: 20vw;
+    left: 36vw;
+    width: 13vw;
+
+    animation: moveSun 1s linear;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveSun {
+    from {
+        top: 23vw;
+        opacity: 0;
+    }
+    to {
+        top: 20vw;
+        opacity: 1;
+    }
+}
+
+.cloud1 {
+    position: absolute;
+    top: 0;
+    width: 19vw;
+
+    animation: moveCloud1 2s linear;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveCloud1 {
+    from {
+        left: -20vw;
+        opacity: 0;
+    }
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+.cloud2 {
+    position: absolute;
+    top: 17.5vw;
+    left: 18.8vw;
+    width: 13vw;
+
+    animation: moveCloud2 2s linear;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveCloud2 {
+    from {
+        left: 0;
+        opacity: 0;
+    }
+    to {
+        left: 18.8vw;
+        opacity: 1;
+    }
+}
+
+.cloud3 {
+    position: absolute;
+    top: 19vw;
+    right: 31.2vw;
+    width: 7vw;
+
+    animation: moveCloud3 2s linear;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveCloud3 {
+    from {
+        right: 0;
+        opacity: 0;
+    }
+    to {
+        right: 31.2vw;
+        opacity: 1;
+    }
+}
+
+.cloud4 {
+    position: absolute;
+    top: 15.4vw;
+    right: 10.9vw;
+    width: 13vw;
+
+    animation: moveCloud4 2s linear;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveCloud4 {
+    from {
+        right: 0;
+        opacity: 0;
+    }
+    to {
+        right: 10.9vw;
+        opacity: 1;
+    }
+}
+
+.cloud5 {
+    position: absolute;
+    top: -3.7vw;
+    right: 0;
+    width: 23vw;
+
+    animation: moveCloud5 2s linear;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveCloud5 {
+    from {
+        right: -20vw;
+        opacity: 0;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+.tree1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9;
+    width: 8.5vw;
+}
+
+@keyframes moveTree1 {
+    from {
+        bottom: -10vw;
+        opacity: 0;
+    }
+    to {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+.tree2 {
+    position: absolute;
+    bottom: 0;
+    left: 3.5vw;
+    z-index: 8;
+    width: 10.5vw;
+}
+
+.tree3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    width: 7.3vw;
+}
+
+.tree4 {
+    position: absolute;
+    bottom: 0;
+    right: .2vw;
+    z-index: 8;
+    width: 8.9vw;
+}
+
+.tree5 {
+    position: absolute;
+    bottom: 0;
+    right: 6vw;
+    z-index: 8;
+    width: 7vw;
+}
+
+.shootingStar {
+    position: absolute;
+    top: 6vw;
+    right: 19vw;
+    width: 25vw;
+
+    visibility: hidden;
+
+    animation: moveStars 1s linear;
+    animation-delay: 3.7s;
+    animation-fill-mode: both;
+}
+
+@keyframes moveStars {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.stars {
+    position: absolute;
+    top: -3.8vw;
+    width: 100vw;
+
+    visibility: hidden;
+
+    animation: moveStars 1s linear;
+    animation-delay: 1.5s;
+    animation-fill-mode: both;
+}
+
+.unitHorizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.closeHistoryBlock {
+    position: absolute;
+    top: 1.3vw;
+    right: 1.5vw;
+    height: 1vw;
+    width: 1vw;
+    border: none;
+    outline: none;
+    white-space: pre;
+    background-size: cover;
+    background: url(../img/Group%2015.png) center;
+}
+.historyRequestsBlock {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 6vw;
+    left: 23vw;
+    width: 55vw;
+    height: 30vw;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    z-index: 15;
+}
+.iconsHistory {
+    margin: 2.8vw 0 0 12vw;
+    display: flex;
+    flex-direction: row;
+}
+.iconsHistory img {
+    margin: 0 1.5vw;
+    object-fit: scale-down;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+.scroll {
+    max-height: 22vw;
+    width: 54vw;
+    overflow-y: hidden;
+}
+.scroll:hover{
+    overflow-y: scroll;
+}
+.scroll::-webkit-scrollbar {
+    width: 5px;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+}
+.horizontalHistoryBlock {
+    margin: 1vw 0 0 2vw;
+    display: flex;
+    flex-direction: row;
+}
+.locationName {
+    margin-right: 1.3vw;
+    font-family: 'K2D-Regular';
+    font-size: 1.3vw;
+    width: 8.7vw;
+}
+.parameterBox {
+    font-family: 'Kanalisirung';
+    font-size: 1.3vw;
+    white-space: pre;
+    line-height: 1.6vw;
+    width: 4.5vw;
+    text-align: center;
+}
+.cleanAll {
+    padding: 0 1.5vw;
+    position: absolute;
+    left: 24vw;
+    bottom: 1.5vw;
+    font-family: 'K2D-Medium';
+    font-size: 1vw;
+    color: white;
+    height: 1.5vw;
+    border: none;
+    border-radius: 3px;
+    background: linear-gradient(to bottom, #2801ff, #10bef2);
+    outline: none;
+    transition: 1s;
+}
+.cleanAll:hover {
+  background: linear-gradient(to bottom, #10bef2, #2801ff);
+  transition: 0.5s;
+}

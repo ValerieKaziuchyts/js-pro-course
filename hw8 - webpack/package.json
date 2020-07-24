@@ -1,0 +1,47 @@
+{
+  "name": "weather-app",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "webpack-dev-server --config webpack.common.js --open",
+    "build-common": "webpack --config webpack.common.js",
+    "build-dev": "webpack --config webpack.dev.js",
+    "build-prod": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValerieKaziuchyts/weather-app.git"
+  },
+  "keywords": [
+    "weather-app",
+    "front-end",
+    "javascript"
+  ],
+  "author": "Valerie Kaziuchyts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValerieKaziuchyts/weather-app/issues"
+  },
+  "homepage": "https://github.com/ValerieKaziuchyts/weather-app#readme",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.5.0",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "less-loader": "^6.2.0",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  }
+}
