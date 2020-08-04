@@ -48,4 +48,23 @@ class Clicker extends React.Component {
     }
 }
 
+class Clickers extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        const clickersToRender = this.props.clickersArray.map((clicker) => {
+            return <Clicker key={clicker.id} />
+        })
+
+        return (
+            <div className="clickerContainer">
+                {clickersToRender}
+            </div>
+        );
+    }
+}
+
 export {Clicker};
+export {Clickers};
