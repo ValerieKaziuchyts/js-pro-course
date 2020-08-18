@@ -1,0 +1,98 @@
+@import 'fonts.css';
+body {
+  margin: 0;
+}
+.clickerContainer {
+  padding: 0 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.buttonContainer {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+}
+.counterBorderBlock {
+  margin: 3% 0 0 6%;
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+}
+.counterBorderBlock:nth-child(3n+4) {
+  margin: 3% 0 0 0;
+}
+.counterBorderBlock:first-child {
+  margin: 3% 0 0 0;
+}
+.numberCounterBlock {
+  padding: 14% 0;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: #6c757d;
+  font-family: 'FiraSans-Regular';
+  font-size: 5vw;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-feature-settings: "tnum";
+}
+.horizontalOptionBlock {
+  display: flex;
+  justify-content: center;
+}
+.plusOption,
+.refreshOption,
+.minusOption {
+  padding: 7% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+.plusOption img,
+.minusOption img {
+  width: 25%;
+}
+.refreshOption img {
+  width: 55%;
+}
+.plusOption {
+  background-color: #28a745;
+}
+.plusOption:hover {
+  background-color: #208f3a;
+}
+.refreshOption {
+  background-color: #ffc72e;
+}
+.refreshOption:hover {
+  background-color: #dba80d;
+}
+.minusOption {
+  background-color: #dc3545;
+}
+.minusOption:hover {
+  background-color: #c02938;
+}
+.addComponentBtn {
+  padding: 0.3% 1%;
+  width: 10%;
+  font-family: 'FiraSans-Regular';
+  font-size: 1.2vw;
+  border: none;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #ffce01, #d8a702);
+  outline: none;
+  transition: 0.3s;
+}
+.addComponentBtn:hover {
+  background: linear-gradient(to bottom, #ffb301, #d88602);
+  color: white;
+  transition: 0.3s;
+}
